@@ -1,0 +1,11 @@
+falcon==1.1.0
+gunicorn==19.6.0
+sqlalchemy==1.2.10
+waitress==1.1.0
+httpie==0.9.9
+lxml==4.2.2
+requests==2.19.1
+selenium==3.12.0
+urllib3==1.23
+fake_useragent==0.1.10
+mechanicalsoup==0.10.0
