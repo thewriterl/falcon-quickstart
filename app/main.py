@@ -6,7 +6,7 @@ from app.middleware.auth import AuthHandler
 from app.middleware.translator import JSONTranslator
 
 from app.api.common import base
-from app.api.v2 import spotifyCallback, spotifyAuth
+from app.api.v2 import spotifyCallback, spotifyAuth, spotifyTracks
 from app.errors import AppError
 
 LOG = log.get_logger()
@@ -19,6 +19,8 @@ class App(falcon.API):
         self.add_route('/', base.BaseResource())
         self.add_route('/authorize', spotifyAuth.SpotifyAuth())
         self.add_route('/callback', spotifyCallback.SpotifyCallback())
+        self.add_route('/tracks', spotifyTracks.SpotifyTracks())
+        self.add_route('/callback', spotifyAuth.SpotifyCallback())
 
         self.add_error_handler(AppError, AppError.handle)
 
