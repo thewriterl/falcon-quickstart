@@ -4,7 +4,7 @@ from datetime import datetime
 
 from app.api.model.album import Album
 from app.api.model.artist import Artist
-from app.api.model.exertnal_urls import ExternalUrls
+from app.api.model.external_urls import ExternalUrls
 from app.api.model.external_ids import ExternalIDS
 
 
@@ -27,3 +27,23 @@ class Track(object):
     track_number: int
     type: str
     uri: str
+
+    def __init__(self, album, artists, available_markets, disc_number, durations_ms, explicit, external_ids, external_urls, href, id, is_local, name, popularity, preview_url, track_number, type, uri):
+        self.album = album
+        self.artists = artists
+        self.available_markets = available_markets
+        self.disc_number = disc_number
+        self.duration_ms = durations_ms
+        self.explicit = explicit
+        self.external_ids = external_ids
+        self.external_urls = external_urls
+        self.href = href
+        self.id = id
+        self.is_local = is_local
+        self.name = name
+        self.popularity = popularity
+        self.preview_url = preview_url
+        self.track_number = track_number
+        self.type = type
+        self.uri = uri
+

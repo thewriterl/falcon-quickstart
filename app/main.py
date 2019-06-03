@@ -1,7 +1,9 @@
 import falcon
 
 from app import log
+from app.database import init_session, db_session
 from app.middleware.auth import AuthHandler
+from app.middleware.session_manager import DatabaseSessionManager
 
 from app.middleware.translator import JSONTranslator
 
@@ -24,9 +26,10 @@ class App(falcon.API):
 
         self.add_error_handler(AppError, AppError.handle)
 
-# init_session()
-# middleware = [AuthHandler(), JSONTranslator(), DatabaseSessionManager(db_session)]
-middleware = [AuthHandler(), JSONTranslator()]
+
+init_session()
+middleware = [AuthHandler(), JSONTranslator(), DatabaseSessionManager(db_session)]
+# middleware = [AuthHandler(), JSONTranslator()]
 application = App(middleware=middleware)
 
 if __name__ == "__main__":

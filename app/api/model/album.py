@@ -3,7 +3,7 @@ from typing import List
 from datetime import datetime
 
 from app.api.model.artist import Artist
-from app.api.model.exertnal_urls import ExternalUrls
+from app.api.model.external_urls import ExternalUrls
 from app.api.model.image import Image
 
 @dataclass
@@ -21,3 +21,18 @@ class Album(object):
     total_tracks: int
     type: str
     uri: str
+
+    def __init__(self, album_type, artists, available_markets, external_urls, href, id, images, name, release_date, release_date_precision, total_tracks, type, uri):
+        self.album_type = album_type
+        self.artists = artists
+        self.available_markets = available_markets
+        self.external_urls = external_urls
+        self.href = href
+        self.id = id
+        self.images = images
+        self.name = name
+        self.release_date = release_date
+        self.release_date_precision = release_date_precision
+        self.total_tracks = total_tracks
+        self.type = type
+        self.uri = uri

@@ -14,10 +14,10 @@ class SpotifyTracks(BaseResource):
 
         header = {'Authorization': 'Bearer ' + auth['access_token']}
 
-        tracks = requests.get('https://api.spotify.com/v1/me/tracks?limit=1', headers=header)
+        tracks = requests.get('https://api.spotify.com/v1/me/tracks?limit=50', headers=header)
 
         ok = json.loads(tracks.content.decode('utf8'))
 
-        tracks = Welcome(json=json)
+        tracks = Welcome(json=ok)
 
         res.body = self.to_json(ok)

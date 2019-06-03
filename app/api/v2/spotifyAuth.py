@@ -18,7 +18,7 @@ class SpotifyAuth(BaseResource):
         options = ChromeOptions()
         options.add_argument('--headless')
 
-        browser = webdriver.Chrome('/Users/luizao/Downloads/chromedriver', options=options)
+        browser = webdriver.Chrome('/Users/luiz.franca/Downloads/chromedriver', options=options)
         browser.get('https://accounts.spotify.com/authorize?client_id=ba9e4d21b6774628a68f270cda29b344&response_type=code&redirect_uri=https://example.com/callback&scope=user-library-read')
 
         WebDriverWait(browser, 90).until(EC.element_to_be_clickable((By.CLASS_NAME, "btn-facebook")))
