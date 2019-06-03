@@ -22,49 +22,43 @@ class Welcome(object):
     def __init__(self, json):
         self.href = json['href']
         self.items = self.create_items(json['items'])
-
+        self.limit = json['limit']
+        self.next = json['next']
+        self.offset = json['offset']
+        self.previous = json['previous']
+        self.total = json['total']
 
     def create_items(self, items: dict):
         list = []
         for item in items:
             i = Item(added_at=item['added_at'], track=self.create_track(item['track']))
             list.append(i)
-        print('asdfafsd')
 
+        return list
 
     def create_track(self, json):
         album_data = json['album']
-        album = Album(album_type=album_data['album_type'], artists=self.create_artists(album_data['artists']), available_markets=album_data['available_markets'], external_urls=self.create_external_urls(album_data['external_urls']), href=album_data['href'], \
-                      id=album_data['id'], images=self.create_images(album_data['images']), name=album_data['name'], release_date=album_data['release_date'], release_date_precision=album_data['release_date_precision'], total_tracks=album_data['total_tracks'], \
-                      type=album_data['type'], uri=album_data['uri'])
-        track_artists = self.create_artists(json['artists'])
-        available_markets = json['available_markets']
-        disc_number = json['disc_number']
-        duration_ms = json['duration_ms']
-        explicit = json['explicit']
-        external_urls = self.create_external_urls(json['external_urls'])
-        # TODO popular external_ids
-        href = json['href']
-        id = json['id']
-        is_local = json['is_local']
-        name = json['name']
-        popularity = json['popularity']
-        preview_url = json['preview_url']
-        track_number = json['track_number']
-        type = json['type']
-        uri = json['uri']
 
-        track = Track(album=album, artists=track_artists, available_markets=available_markets, disc_number=disc_number, durations_ms=duration_ms, explicit=explicit, external_urls=external_urls, external_ids=None, href=href, id=id, is_local=is_local, \
-                      name=name, popularity=popularity, preview_url=preview_url, track_number=track_number, type=type, uri=uri)
+        # TODO popular external_ids
+        # TODO Construir images
+        track = Track(album=self.create_album(album_data), artists=self.create_artists(json['artists']), available_markets=json['available_markets'], disc_number=json['disc_number'], durations_ms=json['duration_ms'], explicit=json['explicit'],
+                      external_urls=self.create_external_urls(json['external_urls']), external_ids=None, href=json['href'], id= json['id'], is_local=json['is_local'],
+                      name=json['name'], popularity=json['popularity'], preview_url=json['preview_url'], track_number=json['track_number'], type=json['type'], uri=json['uri'])
         return track
 
     def create_images(self, json):
         return None
 
-    @staticmethod
-    def create_album(json):
-        list = []
-        return list
+    def create_album(self, album_data):
+        album = Album(album_type=album_data['album_type'], artists=self.create_artists(album_data['artists']),
+                      available_markets=album_data['available_markets'],
+                      external_urls=self.create_external_urls(album_data['external_urls']), href=album_data['href'],
+                      id=album_data['id'], images=self.create_images(album_data['images']), name=album_data['name'],
+                      release_date=album_data['release_date'],
+                      release_date_precision=album_data['release_date_precision'],
+                      total_tracks=album_data['total_tracks'],
+                      type=album_data['type'], uri=album_data['uri'])
+        return album
 
     def create_artists(self, json):
         list =[]

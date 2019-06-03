@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7da782eb-3602-43dc-8654-603ee5ac48b4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Musique.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Musique.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.python-version" beforeDir="false" afterPath="$PROJECT_DIR$/.python-version" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/model/album.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/model/album.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/model/artist.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/model/artist.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/model/exertnal_urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/model/external_urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/model/external_ids.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/model/external_ids.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/model/image.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/model/image.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/model/track.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/model/track.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/api/model/welcome.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/model/welcome.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v2/spotifyAuth.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v2/spotifyAuth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v2/spotifyTracks.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v2/spotifyTracks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/local.ini" beforeDir="false" afterPath="$PROJECT_DIR$/conf/local.ini" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/api/model/welcome.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="29" column="23" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
+            <state relative-caret-position="184">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
               </folding>
@@ -115,8 +101,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/api/v2/spotifyTracks.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="75">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
               </folding>
@@ -172,8 +158,8 @@
         <option value="$PROJECT_DIR$/app/api/model/external_ids.py" />
         <option value="$PROJECT_DIR$/app/api/v2/spotifyAuth.py" />
         <option value="$PROJECT_DIR$/app/api/model/album.py" />
-        <option value="$PROJECT_DIR$/app/api/v2/spotifyTracks.py" />
         <option value="$PROJECT_DIR$/app/api/model/track.py" />
+        <option value="$PROJECT_DIR$/app/api/v2/spotifyTracks.py" />
         <option value="$PROJECT_DIR$/app/api/model/welcome.py" />
       </list>
     </option>
@@ -344,6 +330,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="23" width="1920" height="978" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.092153765" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -379,8 +366,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app/api/model/welcome.py</url>
-          <line>29</line>
-          <option name="timeStamp" value="36" />
+          <line>36</line>
+          <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -680,13 +667,6 @@ json.loads(res.content.decode('utf8').replace(&quot;'&quot;, '&quot;'))</express
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/api/model/artist.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" lean-forward="true" selection-start-line="2" selection-start-column="29" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.pyenv/versions/3.6.2/lib/python3.6/site-packages/falcon/api.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
@@ -713,10 +693,20 @@ json.loads(res.content.decode('utf8').replace(&quot;'&quot;, '&quot;'))</express
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/api/model/track.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="30" column="198" selection-start-line="30" selection-start-column="198" selection-end-line="30" selection-end-column="198" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/api/v2/spotifyTracks.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="75">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
           <folding>
             <element signature="e#0#44#0" expanded="true" />
           </folding>
@@ -730,20 +720,17 @@ json.loads(res.content.decode('utf8').replace(&quot;'&quot;, '&quot;'))</express
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/api/model/track.py">
+    <entry file="file://$PROJECT_DIR$/app/api/model/artist.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="30" column="198" selection-start-line="30" selection-start-column="198" selection-end-line="30" selection-end-column="198" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="45">
+          <caret line="3" lean-forward="true" selection-start-line="2" selection-start-column="29" selection-end-line="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/api/model/welcome.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="29" column="23" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
+        <state relative-caret-position="184">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
           </folding>
