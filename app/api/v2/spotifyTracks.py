@@ -1,5 +1,6 @@
 from app.api.common.base import BaseResource
 from app.api.v2.spotifyAuth import SpotifyAuth
+from app.api.model.welcome import Welcome
 import requests
 import json
 
@@ -13,14 +14,10 @@ class SpotifyTracks(BaseResource):
 
         header = {'Authorization': 'Bearer ' + auth['access_token']}
 
-        print('asdfff')
-
-
         tracks = requests.get('https://api.spotify.com/v1/me/tracks?limit=1', headers=header)
 
         ok = json.loads(tracks.content.decode('utf8'))
 
+        tracks = Welcome(json=json)
+
         res.body = self.to_json(ok)
-
-
-        print('asdf')
