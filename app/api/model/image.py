@@ -1,10 +1,13 @@
-from dataclasses import dataclass
+from sqlalchemy import Column, Integer, String
 
-@dataclass
-class Image(object):
-    height: int
-    url: str
-    width: int
+from app.model import Base
+
+
+class Image(Base):
+    id = Column(Integer, primary_key=True)
+    height = Column(Integer, nullable=False)
+    width = Column(Integer, nullable=False)
+    url = Column(String, nullable=False)
 
     def __init__(self, height, url, width):
         self.height = height

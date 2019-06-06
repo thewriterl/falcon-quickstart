@@ -2,16 +2,27 @@ from dataclasses import dataclass
 from typing import List
 from datetime import datetime
 
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.dialects.postgresql import JSONB
+
 from app.api.model.album import Album
 from app.api.model.artist import Artist
 from app.api.model.external_urls import ExternalUrls
 from app.api.model.item import Item
 from app.api.model.track import Track
+from app.model import Base
 
 
 @dataclass
-class Welcome(object):
-    href: str
+class Welcome(Base):
+    # user_id = Column(Integer, primary_key=True)
+    # username = Column(String(20), nullable=False)
+    # email = Column(String(320), unique=True, nullable=False)
+    # password = Column(String(80), nullable=False)
+    # info = Column(JSONB, nullable=True)
+    # token = Column(String(255), nullable=False)
+    id = Column(Integer, primary_key=True)
+    href = Column(String, nullable=True)
     items: List[Item]
     limit: int
     next: str
@@ -74,4 +85,9 @@ class Welcome(object):
         list.append(url)
         return list
 
+    FIELDS = {
+        'href': str
+    }
+
+    FIELDS.update(Base.FIELDS)
 

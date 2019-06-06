@@ -1,3 +1,5 @@
+from sqlalchemy.orm import Session
+
 from app.api.common.base import BaseResource
 from app.api.v2.spotifyAuth import SpotifyAuth
 from app.api.model.welcome import Welcome
@@ -18,6 +20,11 @@ class SpotifyTracks(BaseResource):
 
         ok = json.loads(tracks.content.decode('utf8'))
 
+        session = Session()
+
         tracks = Welcome(json=ok)
+
+        session.add(tracks)
+        session.commit()
 
         res.body = self.to_json(ok)

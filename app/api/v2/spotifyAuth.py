@@ -5,10 +5,12 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver import ChromeOptions
-
+from sqlalchemy.orm import Session
 
 from app.api.common.base import BaseResource
 from selenium import webdriver
+
+from app.api.model.welcome import Welcome
 
 
 class SpotifyAuth(BaseResource):
@@ -18,7 +20,7 @@ class SpotifyAuth(BaseResource):
         options = ChromeOptions()
         options.add_argument('--headless')
 
-        browser = webdriver.Chrome('/Users/luiz.franca/Downloads/chromedriver', options=options)
+        browser = webdriver.Chrome('/Users/luizao/Downloads/chromedriver', options=options)
         browser.get('https://accounts.spotify.com/authorize?client_id=ba9e4d21b6774628a68f270cda29b344&response_type=code&redirect_uri=https://example.com/callback&scope=user-library-read')
 
         WebDriverWait(browser, 90).until(EC.element_to_be_clickable((By.CLASS_NAME, "btn-facebook")))
@@ -57,7 +59,5 @@ class SpotifyAuth(BaseResource):
 class SpotifyCallback(BaseResource):
 
     def on_get(self, req, res):
-
-
 
         print('asdfasdf')
