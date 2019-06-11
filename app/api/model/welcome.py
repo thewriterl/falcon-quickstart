@@ -1,4 +1,3 @@
-from dataclasses import dataclass
 from typing import List
 from datetime import datetime
 
@@ -13,7 +12,6 @@ from app.api.model.track import Track
 from app.model import Base
 
 
-@dataclass
 class Welcome(Base):
     # user_id = Column(Integer, primary_key=True)
     # username = Column(String(20), nullable=False)
