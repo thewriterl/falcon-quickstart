@@ -20,11 +20,13 @@ class SpotifyTracks(BaseResource):
 
         ok = json.loads(tracks.content.decode('utf8'))
 
-        session = Session()
+        session = req.context['session']
 
         tracks = Welcome(json=ok)
 
-        session.add(tracks)
-        session.commit()
+        for track in tracks.items:
+            track = track.track
+            session.add(track)
+            session.commit()
 
         res.body = self.to_json(ok)
