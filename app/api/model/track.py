@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+
 from typing import List
 from datetime import datetime
 
@@ -13,7 +13,7 @@ from app.api.model.external_ids import ExternalIDS
 from app.model import Base
 
 
-@dataclass
+
 class Track(Base):
     # billing_address_id = Column(Integer, ForeignKey("address.id"))
     # shipping_address_id = Column(Integer, ForeignKey("address.id"))

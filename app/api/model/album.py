@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+
 from typing import List
 from datetime import datetime
 
@@ -10,7 +10,7 @@ from app.api.model.image import Image
 from app.model import Base
 
 
-@dataclass
+
 class Album(Base):
     id = Column(Integer, primary_key=True)
     album_type = Column(String, nullable=True)
